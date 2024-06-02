@@ -1,71 +1,62 @@
-# Zoom Meeting SDK React sample
+# Zoom Meeting SDK
 
-Use of this sample app is subject to our [Terms of Use](https://explore.zoom.us/en/legal/zoom-api-license-and-tou/).
+## Instalação
 
-
-This repo is a [React](https://reactjs.org/) app generated via [Create React App](https://github.com/facebook/create-react-app) that uses the [Zoom Meeting SDK](https://developers.zoom.us/docs/meeting-sdk/web/) to start and join Zoom meetings and webinars.
-
-![Zoom Meeting SDK Client View](/public/images/meetingsdk-web-client-view.gif)
-
-## Installation
-
-To get started, clone the repo:
+Começe clonando o repositório:
 
 `$ git clone https://github.com/zoom/meetingsdk-react-sample.git`
 
-## Setup
+## Configuração
 
-1. Once cloned, navigate to the `meetingsdk-react-sample` directory:
+1. Após clonar, navegue até o diretorio `meetingsdk-react-sample` .
 
    `$ cd meetingsdk-react-sample`
 
-1. Then install the dependencies:
+1. Agora instale as depedências:
 
    `$ npm install`
 
-1. Open the `meetingsdk-react-sample` directory in your code editor.
+1. Abra `meetingsdk-react-sample` no seu editor de código.
 
-1. Open the `src/App.js` file, and enter values for the variables:
+1. Abra o arquivo `src/App.js`, e coloque as suas variáveis:
 
-   **NEW:** To use the [Component View](https://developers.zoom.us/docs/meeting-sdk/web/component-view/), replace `App.js` with `App-New.js`. (The `leaveUrl` is not needed). Also, uncomment the Component View CSS tags and comment out the Client View CSS in `public/index.html`.
-
-   | Variable                   | Description |
+   | Variável                   | Descrição |
    | -----------------------|-------------|
-   | authEndpoint          | Required, your Meeting SDK auth endpoint that securely generates a Meeting SDK JWT. [Get a Meeting SDK auth endpoint here.](https://github.com/zoom/meetingsdk-sample-signature-node.js) |
-   | sdkKey                   | Required, your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023. [You can get yours here](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials). |
-   | meetingNumber                   | Required, the Zoom Meeting or webinar number. |
-   | passWord                   | Optional, meeting password. Leave as empty string if the meeting does not require a password. |
-   | role                   | Required, `0` to specify participant, `1` to specify host. |
-   | userName                   | Required, a name for the user joining / starting the meeting / webinar. |
-   | userEmail                   | Required for Webinar, optional for Meeting, required for meeting and webinar if [registration is required](https://support.zoom.us/hc/en-us/articles/360054446052-Managing-meeting-and-webinar-registration). The email of the user starting or joining the meeting / webinar. |
-   | registrantToken            | Required if your [meeting](https://developers.zoom.us/docs/meeting-sdk/web/client-view/meetings/#join-meeting-with-registration-required) or [webinar](https://developers.zoom.us/docs/meeting-sdk/web/client-view/webinars/#join-webinar-with-registration-required) requires [registration](https://support.zoom.us/hc/en-us/articles/360054446052-Managing-meeting-and-webinar-registration). |
-   | zakToken            | Required to start meetings or webinars on external Zoom user's behalf, the [authorized Zoom user's ZAK token](https://developers.zoom.us/docs/meeting-sdk/auth/#start-meetings-and-webinars-with-a-zoom-users-zak-token). The ZAK can also be used to join as an [authenticated participant](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0063837). |
-   | leaveUrl                   | Required for Client View, the url the user is taken to once the meeting is over. |
+  | authEndpoint          | Obrigatório, o seu endpoint de autenticação do Meeting SDK que gera com segurança um JWT para o Meeting SDK. [Obtenha um endpoint de autenticação do Meeting SDK aqui.](https://github.com/zoom/meetingsdk-sample-signature-node.js) |
+| sdkKey                | Obrigatório, sua chave do Zoom Meeting SDK ou ID do Cliente para o tipo de aplicativo Meeting SDK criado após 11 de fevereiro de 2023. [Você pode obter a sua aqui](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials). |
+| meetingNumber         | Obrigatório, o número do Zoom Meeting ou webinar. |
+| passWord              | Opcional, senha da reunião. Deixe como uma string vazia se a reunião não exigir uma senha. |
+| role                  | Obrigatório, `0` para especificar participante, `1` para especificar anfitrião. |
+| userName              | Obrigatório, um nome para o usuário que está entrando / começando a reunião / webinar. |
+| userEmail             | Obrigatório para Webinar, opcional para Reunião, obrigatório para reunião e webinar se [o registro for necessário](https://support.zoom.us/hc/en-us/articles/360054446052-Managing-meeting-and-webinar-registration). O e-mail do usuário que está começando ou entrando na reunião / webinar. |
+| registrantToken       | Obrigatório se sua [reunião](https://developers.zoom.us/docs/meeting-sdk/web/client-view/meetings/#join-meeting-with-registration-required) ou [webinar](https://developers.zoom.us/docs/meeting-sdk/web/client-view/webinars/#join-webinar-with-registration-required) exigir [registro](https://support.zoom.us/hc/en-us/articles/360054446052-Managing-meeting-and-webinar-registration). |
+| zakToken              | Obrigatório para iniciar reuniões ou webinars em nome de um usuário externo do Zoom, o [ZAK token do usuário autorizado do Zoom](https://developers.zoom.us/docs/meeting-sdk/auth/#start-meetings-and-webinars-with-a-zoom-users-zak-token). O ZAK também pode ser usado para entrar como um [participante autenticado](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0063837). |
+| leaveUrl              | Obrigatório para Client View, a URL para a qual o usuário é levado uma vez que a reunião termina. |
 
-   Example:
+   Exemplo:
 
    ```js
    var authEndpoint = 'http://localhost:4000'
    var sdkKey = 'abc123'
    var meetingNumber = '123456789'
-   var passWord = ''
+   var passWord = '1234'
    var role = 0
-   var userName = 'React'
+   var userName = 'User1'
    var userEmail = ''
    var registrantToken = ''
    var zakToken = ''
    var leaveUrl = 'http://localhost:3000'
    ```
 
-1. Save `App.js`.
+1. Salve `App.js`.
 
-1. Run the app:
+1. Inicie a aplicação:
 
    `$ npm start`
 
-## Usage
+## Como usar
 
-1. Navigate to http://localhost:3000 and click "Join Meeting".
+1. Navegue para http://localhost:3000 e clique "Entrar na Sessão".
 
    ### Client View
 
@@ -75,52 +66,3 @@ To get started, clone the repo:
 
    ![Zoom Meeting SDK Component View](/public/images/meetingsdk-web-component-view.gif)
 
-   Learn more about [Gallery View requirements](https://developers.zoom.us/docs/meeting-sdk/web/gallery-view/) and [see more product screenshots](https://developers.zoom.us/docs/meeting-sdk/web/gallery-view/#how-views-look-with-and-without-sharedarraybuffer).
-
-## Deployment
-
-The React Sample App can be easily deployed to [GitHub Pages](#github-pages), or [another static web hosting service](#other-static-web-hosting), like an AWS S3 bucket.
-
-### GitHub Pages
-
-1. Create a repo on [GitHub](https://github.com).
-
-1. Add the remote to your project:
-
-   `$ git remote add origin GITHUB_URL/GITHUB_USERNAME/GITHUB_REPO_NAME.git`
-
-1. Open the `package.json` file and on line 5 replace the homepage value `""` with your GitHub repo name with a slash in front like this: `"/GITHUB_REPO_NAME"`.
-
-1. Build your project:
-
-   `$ npm run build`
-
-1. Rename the `build` folder to `docs`
-
-1. Git add, commit, and push your project:
-
-   `$ git add -A`
-
-   `$ git commit -m "deploying to github"`
-
-   `$ git push origin master`
-
-1. On GitHub, in your repo, navigate to the "settings" page, scroll down to the "GitHub Pages" section, and choose the "master branch/docs folder" for the source.
-
-1. Now your project will be deployed to https://GITHUB_USERNAME.github.io/GITHUB_REPO_NAME.
-
-### Other Static Web Hosting
-
-1. Build your project:
-
-   `$ npm run build`
-
-1. Deploy the complied `/build` directory to a static web hosting service, like an AWS S3 bucket.
-
-### Advanced Deployment
-
-For more advanced instructions on deployment, [see the React Deployment docs](https://create-react-app.dev/docs/deployment/).
-
-## Need help?
-
-If you're looking for help, try [Developer Support](https://devsupport.zoom.us) or our [Developer Forum](https://devforum.zoom.us). Priority support is also available with [Premier Developer Support](https://explore.zoom.us/docs/en-us/developer-support-plans.html) plans.

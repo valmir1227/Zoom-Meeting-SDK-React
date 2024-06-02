@@ -1,12 +1,13 @@
 main {
-  width: 70%;
+  width: 100vw;
   margin: auto;
   text-align: center;
+  overflow: hidden;
 }
 
 main button {
   margin-top: 20px;
-  background-color: #2D8CFF;
+  background-color: #2d8cff;
   color: #ffffff;
   text-decoration: none;
   padding-top: 10px;
@@ -21,5 +22,96 @@ main button {
 }
 
 main button:hover {
-  background-color: #2681F2;
+  background-color: #2681f2;
+}
+
+#meetingSDKElement {
+  width: 100%;
+}
+
+#meetingSDKElement>div {
+  width: 100%;
+}
+
+.css-1vu2yqv {
+  width: 100%;
+}
+
+.css-1nwgrc8 {
+  width: 100%;
+}
+
+.css-d2sft1 {
+  width: 100%;
+  border: 0;
+}
+
+.css-d2sft1>div {
+  width: 100%;
+  border: 0;
+}
+
+.css-ulr84r div {
+  width: 100%;
+}
+
+/*CHAT*/
+.css-kqh8t6 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*PARTICIPANTS*/
+.css-abat4p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Settings*/
+.css-yi6yuq {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Breakout rooms*/
+.css-8fn2wv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Admit new user in call*/
+.css-4fszc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.css-y0o9ic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.css-k4jnmr {
+  max-width: fit-content !important;
+}
+
+.css-1rbt7n8 {
+  gap: 6px;
+}
+
+.css-3kn9b2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
