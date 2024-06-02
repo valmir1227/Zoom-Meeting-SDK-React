@@ -10,7 +10,8 @@ function App() {
   const role = 1;
   const userName = "Valmir Almeida";
   const userEmail = "almeidavalmir76@gmail.com";
-  const registrantToken = "";
+  const registrantToken =
+    "";
   const zakToken = "";
 
   return (

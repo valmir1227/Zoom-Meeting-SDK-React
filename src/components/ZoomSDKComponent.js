@@ -42,7 +42,7 @@ const ZoomSDKComponent = ({
     client
       .init({
         zoomAppRoot: meetingSDKElement,
-        language: "pt-BR",
+        language: "pt-PT",
         customize: {
           video: {
             isResizable: true,
