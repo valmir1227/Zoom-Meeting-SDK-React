@@ -4,25 +4,25 @@
 
 Começe clonando o repositório:
 
-`$ git clone https://github.com/zoom/meetingsdk-react-sample.git`
+`$ git clone https://github.com/valmir1227/Zoom-Meeting-SDK-React.git`
 
 ## Configuração
 
-1. Após clonar, navegue até o diretorio `meetingsdk-react-sample` .
+1. Após clonar, navegue até o diretorio `Zoom-Meeting-SDK-React` .
 
-   `$ cd meetingsdk-react-sample`
+   `$ cd Zoom-Meeting-SDK-React`
 
 1. Agora instale as depedências:
 
    `$ npm install`
 
-1. Abra `meetingsdk-react-sample` no seu editor de código.
+1. Abra `Zoom-Meeting-SDK-React` no seu editor de código.
 
 1. Abra o arquivo `src/App.js`, e coloque as suas variáveis:
 
-   | Variável                   | Descrição |
-   | -----------------------|-------------|
-  | authEndpoint          | Obrigatório, o seu endpoint de autenticação do Meeting SDK que gera com segurança um JWT para o Meeting SDK. [Obtenha um endpoint de autenticação do Meeting SDK aqui.](https://github.com/zoom/meetingsdk-sample-signature-node.js) |
+| Variável                   | Descrição |
+| -----------------------|-------------|
+| authEndpoint          | Obrigatório, o seu endpoint de autenticação do Meeting SDK que gera com segurança um JWT para o Meeting SDK. [Obtenha um endpoint de autenticação do Meeting SDK aqui.](https://github.com/zoom/meetingsdk-sample-signature-node.js) |
 | sdkKey                | Obrigatório, sua chave do Zoom Meeting SDK ou ID do Cliente para o tipo de aplicativo Meeting SDK criado após 11 de fevereiro de 2023. [Você pode obter a sua aqui](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials). |
 | meetingNumber         | Obrigatório, o número do Zoom Meeting ou webinar. |
 | passWord              | Opcional, senha da reunião. Deixe como uma string vazia se a reunião não exigir uma senha. |
