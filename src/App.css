@@ -25,6 +25,11 @@ main button:hover {
   background-color: #2681f2;
 }
 
+main button:disabled {
+  cursor: not-allowed;
+  background: #686868;
+}
+
 #meetingSDKElement {
   width: 100%;
 }

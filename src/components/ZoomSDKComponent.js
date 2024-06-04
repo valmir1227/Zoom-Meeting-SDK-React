@@ -13,10 +13,12 @@ const ZoomSDKComponent = ({
   zakToken,
 }) => {
   const [inMeeting, setInMeeting] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const client = ZoomMtgEmbedded.createClient();
 
   function getSignature(e) {
     e.preventDefault();
+    setButtonDisabled(true);
 
     fetch(authEndpoint, {
       method: "POST",
@@ -29,16 +31,15 @@ const ZoomSDKComponent = ({
       .then((res) => res.json())
       .then((response) => {
         startMeeting(response.signature);
-        setInMeeting(true);
       })
       .catch((error) => {
         console.error(error);
+        setButtonDisabled(false);
       });
   }
 
   function startMeeting(signature) {
     let meetingSDKElement = document.getElementById("meetingSDKElement");
-
     client
       .init({
         zoomAppRoot: meetingSDKElement,
@@ -72,13 +73,16 @@ const ZoomSDKComponent = ({
           })
           .then(() => {
             console.log("joined successfully");
+            setInMeeting(true);
           })
           .catch((error) => {
             console.log(error);
+            setButtonDisabled(false);
           });
       })
       .catch((error) => {
         console.log(error);
+        setButtonDisabled(false);
       });
   }
 
@@ -88,6 +92,7 @@ const ZoomSDKComponent = ({
       .then(() => {
         setInMeeting(false);
         console.log("left the meeting");
+        setButtonDisabled(false);
       })
       .catch((error) => {
         console.error(error);
@@ -102,7 +107,9 @@ const ZoomSDKComponent = ({
       {inMeeting ? (
         <button onClick={leaveMeeting}>Sair da Sessão</button>
       ) : (
-        <button onClick={getSignature}>Entrar na Sessão</button>
+        <button onClick={getSignature} disabled={buttonDisabled}>
+          Entrar na Sessão
+        </button>
       )}
     </div>
   );

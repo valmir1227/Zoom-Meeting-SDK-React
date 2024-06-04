@@ -3,13 +3,13 @@ import "./App.css";
 import ZoomSDKComponent from "./components/ZoomSDKComponent";
 
 function App() {
-  const authEndpoint = "http://localhost:4001";
+  const authEndpoint = "http://localhost:4000";
   const sdkKey = "";
   const meetingNumber = "";
   const passWord = "";
   const role = 1;
   const userName = "Valmir Almeida";
-  const userEmail = "almeidavalmir76@gmail.com";
+  const userEmail = "";
   const registrantToken =
     "";
   const zakToken = "";
